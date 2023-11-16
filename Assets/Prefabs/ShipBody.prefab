@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 1628299532934215588}
   - component: {fileID: 7499475000486337756}
   - component: {fileID: 4485638559912761695}
+  - component: {fileID: 995887187564484734}
   m_Layer: 0
   m_Name: ShipBody
   m_TagString: Untagged
@@ -31,15 +32,15 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3864832275609146210}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -0.071}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.10268654, y: 0.100007094, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8538228809073642259}
   - {fileID: 5585544593394382550}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &42222232214166067
 SpriteRenderer:
@@ -241,9 +242,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _shipStateController: {fileID: 5364154432195023509}
-  _bulletInterval: 0.5
-  _lastBulletTime: -Infinity
-  _bulletQueued: 0
+  _bulletInterval: 0.2
+--- !u!114 &995887187564484734
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3864832275609146210}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1584b8704aa34d42a4c112d9e19230ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4302279109877972210
 GameObject:
   m_ObjectHideFlags: 0
@@ -269,7 +280,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4302279109877972210}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.41884, z: -0.1}
+  m_LocalPosition: {x: 0, y: 0.421, z: -0.1}
   m_LocalScale: {x: 0.2758, y: 0.2758, z: 0.2758}
   m_ConstrainProportionsScale: 0
   m_Children: []

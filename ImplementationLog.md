@@ -40,3 +40,9 @@ this will also give us more liberty to customize some behaviours after the base 
 
 ### 2023/11/16 16:51
 Quick stop to create git repository and start tracking progress
+
+### 2023/11/16 17:54
+Created a component to control how objects in the game will wrap around the camera, i opted to 
+create a controller where objects register themselves to have this behavior instead of putting it 
+in each object to avoid the performance overhead of making fixed update calls for every object that
+has this behaviour

@@ -8,9 +8,10 @@ namespace Asteroidsberto.Ship
     {
         [SerializeField] private ShipStateController _shipStateController;
         
-        [SerializeField] private float _bulletInterval = 1;
-        [SerializeField] private float _lastBulletTime = float.NegativeInfinity;
-        [SerializeField] private bool _bulletQueued;
+        [SerializeField] private float _bulletInterval = 0.2f;
+        
+        private float _lastBulletTime = float.NegativeInfinity;
+        private bool _bulletQueued;
         private void OnEnable()
         {
             _shipStateController.OnShipShoot += OnBulletTrigger;
