@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Wrapper
+namespace Asteroidsberto.Wrapper
 {
     public class WrappedSpaceObject:MonoBehaviour
     {
