@@ -1,12 +1,12 @@
 ﻿using UnityEngine;
 
-namespace Asteroidsberto.Bullet
+namespace Asteroidsberto.Enemies
 {
     public delegate void OnDespawn();
 
     public delegate void OnSpawn();
 
-    public class BulletState : MonoBehaviour
+    public class EnemyState : MonoBehaviour
     {
         public event OnDespawn OnDespawn;
         public event OnSpawn OnSpawn;
@@ -28,6 +28,7 @@ namespace Asteroidsberto.Bullet
             {
                 return;
             }
+
             _spawned = false;
             OnDespawn?.Invoke();
         }
@@ -38,6 +39,7 @@ namespace Asteroidsberto.Bullet
             {
                 return;
             }
+
             _spawned = true;
             OnSpawn?.Invoke();
         }

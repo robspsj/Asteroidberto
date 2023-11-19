@@ -1,11 +1,12 @@
 ﻿using System.Collections;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace Asteroidsberto.Ship
 {
     public class ShipBulletSpawner : MonoBehaviour
     {
-        [SerializeField] private ShipStateController _shipStateController;
+        [FormerlySerializedAs("_shipStateController")] [SerializeField] private ShipState _shipState;
         [SerializeField] private float _bulletInterval = 0.2f;
         [SerializeField] private Transform _worldTransform;
         [SerializeField] private Transform _bulletOrigin;
@@ -16,12 +17,12 @@ namespace Asteroidsberto.Ship
 
         private void OnEnable()
         {
-            _shipStateController.OnShipShoot += OnBulletTrigger;
+            _shipState.OnShipShoot += OnBulletTrigger;
         }
 
         private void OnDisable()
         {
-            _shipStateController.OnShipShoot -= OnBulletTrigger;
+            _shipState.OnShipShoot -= OnBulletTrigger;
             _bulletQueued = false;
         }
 

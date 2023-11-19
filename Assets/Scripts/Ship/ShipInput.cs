@@ -1,10 +1,11 @@
 ﻿using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace Asteroidsberto.Ship
 {
     public class ShipInput : MonoBehaviour
     {
-        [SerializeField] private ShipStateController _stateController;
+        [FormerlySerializedAs("_stateController")] [SerializeField] private ShipState _state;
 
         [SerializeField] private KeyCode _accelerateButton = KeyCode.Space;
         [SerializeField] private KeyCode _turnLeftButton = KeyCode.A;
@@ -13,23 +14,23 @@ namespace Asteroidsberto.Ship
 
         private void Update()
         {
-            _stateController.CurrentBoosterState = Input.GetKey(_accelerateButton)
-                ? ShipStateController.BoosterState.On
-                : ShipStateController.BoosterState.Off;
+            _state.CurrentBoosterState = Input.GetKey(_accelerateButton)
+                ? ShipState.BoosterState.On
+                : ShipState.BoosterState.Off;
 
             var leftInput = Input.GetKey(_turnLeftButton);
             var rightInput = Input.GetKey(_turnRightButton);
 
             if (leftInput && !rightInput)
-                _stateController.CurrentTurningState = ShipStateController.TurningState.Left;
+                _state.CurrentTurningState = ShipState.TurningState.Left;
             else if (!leftInput && rightInput)
-                _stateController.CurrentTurningState = ShipStateController.TurningState.Right;
+                _state.CurrentTurningState = ShipState.TurningState.Right;
             else
-                _stateController.CurrentTurningState = ShipStateController.TurningState.NotTurning;
+                _state.CurrentTurningState = ShipState.TurningState.NotTurning;
 
             if (Input.GetKeyDown(_shootButton))
             {
-                _stateController.ShootTrigger();
+                _state.ShootTrigger();
             }
         }
     }

@@ -3,7 +3,7 @@ using Random = UnityEngine.Random;
 
 namespace Asteroidsberto.Enemies
 {
-    public class InitialSpeedBehaviour : MonoBehaviour
+    public class EnemyInitialSpeedBehaviour : MonoBehaviour
     {
         [SerializeField] private Rigidbody2D _rigidbody2D;
         [SerializeField] private float _speed;

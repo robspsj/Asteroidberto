@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Bullet
+namespace Asteroidsberto.Bullet
 {
     public class BulletStraightMovement : MonoBehaviour
     {

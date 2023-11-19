@@ -10,13 +10,16 @@ GameObject:
   m_Component:
   - component: {fileID: 1165327172549403251}
   - component: {fileID: 4866721442585343711}
+  - component: {fileID: 5749385925302123262}
   - component: {fileID: 673664086168000322}
   - component: {fileID: 4975724873036388853}
   - component: {fileID: 7333354292105425742}
   - component: {fileID: 5942663470238151036}
-  m_Layer: 0
+  - component: {fileID: 3936487000496266595}
+  - component: {fileID: 6975699673008110599}
+  m_Layer: 6
   m_Name: AsteroidBig
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -34,7 +37,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &4866721442585343711
 SpriteRenderer:
@@ -88,6 +91,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &5749385925302123262
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 294436792371198517}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c057f80ecaa4e8cb4038d095a7fda56, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _spawned: 0
 --- !u!114 &673664086168000322
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -156,7 +172,7 @@ PolygonCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -194,3 +210,29 @@ MonoBehaviour:
   _speed: 2
   _rotationSpeedLowerRange: 5
   _rotationSpeedUpperRange: 90
+--- !u!114 &3936487000496266595
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 294436792371198517}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54c9cfde46e843e7bd22459174e8d8e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _bulletState: {fileID: 5749385925302123262}
+--- !u!114 &6975699673008110599
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 294436792371198517}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e241f2a1b1c04d1db7e82f11e41752ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _enemyState: {fileID: 5749385925302123262}

@@ -1,10 +1,8 @@
-﻿using System;
-using Unity.VisualScripting;
-using UnityEngine;
+﻿using UnityEngine;
 
-namespace Bullet
+namespace Asteroidsberto.Bullet
 {
-    public class DesroyOnDespawn : MonoBehaviour
+    public class BulletDestroyOnDespawn : MonoBehaviour
     {
         [SerializeField] private BulletState _bulletState;
         private void OnEnable()

@@ -12,6 +12,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: AsteroidSmall
       objectReference: {fileID: 0}
+    - target: {fileID: 294436792371198517, guid: 18c61e9841a11244596b1360f4271814, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 1165327172549403251, guid: 18c61e9841a11244596b1360f4271814, type: 3}
       propertyPath: m_RootOrder
       value: 0

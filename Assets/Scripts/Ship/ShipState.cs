@@ -3,16 +3,18 @@ using UnityEngine;
 namespace Asteroidsberto.Ship
 {
     public delegate void ShipBoosterStateChange(
-        ShipStateController.BoosterState previousState,
-        ShipStateController.BoosterState newState);
+        ShipState.BoosterState previousState,
+        ShipState.BoosterState newState);
     
     public delegate void ShipTurningStateChange(
-        ShipStateController.TurningState previousState,
-        ShipStateController.TurningState newState);
+        ShipState.TurningState previousState,
+        ShipState.TurningState newState);
 
     public delegate void OnShipShoot();
 
-    public class ShipStateController : MonoBehaviour
+    public delegate void OnShipGotHit();
+
+    public class ShipState : MonoBehaviour
     {
         public enum BoosterState
         {
@@ -32,6 +34,7 @@ namespace Asteroidsberto.Ship
         public event ShipBoosterStateChange OnShipBoosterStateChange;
         public event ShipTurningStateChange OnShipTurningStateChange;
         public event OnShipShoot OnShipShoot;
+        public event OnShipGotHit OnShipGotHit;
 
         public void ShootTrigger()
         {
@@ -64,6 +67,11 @@ namespace Asteroidsberto.Ship
                 OnShipTurningStateChange?.Invoke(previousState, value);
             }
             get => _currentTurningState;
+        }
+
+        public void GetHit()
+        {
+            OnShipGotHit?.Invoke();
         }
     }
 }

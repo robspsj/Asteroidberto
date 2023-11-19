@@ -1,31 +1,32 @@
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace Asteroidsberto.Ship
 {
     public class ShipBoosterView : MonoBehaviour
     {
         [SerializeField] private SpriteRenderer _boosterSpriteRenderer;
-        [SerializeField] private ShipStateController _shipStateController;
+        [FormerlySerializedAs("_shipStateController")] [SerializeField] private ShipState _shipState;
 
         private void OnEnable()
         {
-            UpdateSpriteState(_shipStateController.CurrentBoosterState);
-            _shipStateController.OnShipBoosterStateChange += OnBoosterStateChange;
+            UpdateSpriteState(_shipState.CurrentBoosterState);
+            _shipState.OnShipBoosterStateChange += OnBoosterStateChange;
         }
 
         private void OnDisable()
         {
-            _shipStateController.OnShipBoosterStateChange -= OnBoosterStateChange;
+            _shipState.OnShipBoosterStateChange -= OnBoosterStateChange;
         }
 
-        private void OnBoosterStateChange(ShipStateController.BoosterState _, ShipStateController.BoosterState newState)
+        private void OnBoosterStateChange(ShipState.BoosterState _, ShipState.BoosterState newState)
         {
             UpdateSpriteState(newState);
         }
 
-        private void UpdateSpriteState(ShipStateController.BoosterState currentState)
+        private void UpdateSpriteState(ShipState.BoosterState currentState)
         {
-            _boosterSpriteRenderer.enabled = currentState == ShipStateController.BoosterState.On;
+            _boosterSpriteRenderer.enabled = currentState == ShipState.BoosterState.On;
         }
     }
 }

@@ -18,9 +18,11 @@ GameObject:
   - component: {fileID: 7499475000486337756}
   - component: {fileID: 4485638559912761695}
   - component: {fileID: 995887187564484734}
-  m_Layer: 0
+  - component: {fileID: 2475381556212984570}
+  - component: {fileID: 1773799743200829803}
+  m_Layer: 9
   m_Name: ShipBody
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -194,7 +196,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _rigidbody2D: {fileID: 6176846394253657460}
-  _shipStateController: {fileID: 5364154432195023509}
+  _shipState: {fileID: 5364154432195023509}
   _shipTransform: {fileID: 667296704810243168}
   _thrustForce: 10
 --- !u!114 &1628299532934215588
@@ -209,7 +211,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3aa9e4a034ed42b3afd8be4d05dcf30e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _stateController: {fileID: 5364154432195023509}
+  _state: {fileID: 5364154432195023509}
   _accelerateButton: 32
   _turnLeftButton: 97
   _turnRightButton: 100
@@ -227,7 +229,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _rigidbody2D: {fileID: 6176846394253657460}
-  _shipStateController: {fileID: 5364154432195023509}
+  _shipState: {fileID: 5364154432195023509}
   _turningAngularSpeed: 180
 --- !u!114 &4485638559912761695
 MonoBehaviour:
@@ -241,8 +243,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a44c0e9ae4ad4a40bfe512e81529f7b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _shipStateController: {fileID: 5364154432195023509}
+  _shipState: {fileID: 5364154432195023509}
   _bulletInterval: 0.2
+  _worldTransform: {fileID: 0}
+  _bulletOrigin: {fileID: 0}
+  _bulletPrefab: {fileID: 0}
 --- !u!114 &995887187564484734
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -255,6 +260,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1584b8704aa34d42a4c112d9e19230ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2475381556212984570
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3864832275609146210}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 138dce4c2e5e46bf9727a2b250282c48, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _shipState: {fileID: 5364154432195023509}
+--- !u!114 &1773799743200829803
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3864832275609146210}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf04990679cc40fb800d9dc9b96e51b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _enemyState: {fileID: 5364154432195023509}
 --- !u!1 &4302279109877972210
 GameObject:
   m_ObjectHideFlags: 0
@@ -265,7 +296,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8538228809073642259}
   - component: {fileID: 5466130438398322651}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: ShipTipIndicator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -350,7 +381,7 @@ GameObject:
   - component: {fileID: 5585544593394382550}
   - component: {fileID: 5436531241871760220}
   - component: {fileID: 753016205243178218}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Booster
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -437,4 +468,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _boosterSpriteRenderer: {fileID: 5436531241871760220}
-  _shipStateController: {fileID: 5364154432195023509}
+  _shipState: {fileID: 5364154432195023509}

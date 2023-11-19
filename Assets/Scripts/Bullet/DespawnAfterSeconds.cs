@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using UnityEngine;
 
-namespace Bullet
+namespace Asteroidsberto.Bullet
 {
     public class DespawnAfterSeconds : MonoBehaviour
     {
