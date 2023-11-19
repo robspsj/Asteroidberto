@@ -46,3 +46,9 @@ Created a component to control how objects in the game will wrap around the came
 create a controller where objects register themselves to have this behavior instead of putting it 
 in each object to avoid the performance overhead of making fixed update calls for every object that
 has this behaviour
+
+### 2023/11/19 19:50
+Implemented a bullet behaviour, bullet now has a simple state that is just a bool for now the the despawn/movement
+mechanics are separated each in their own behaviour so it is easy to experiment in the future with different
+bullet behaviors like powerups, also it is a bad practice to keep instantiating and destroying lots of objects, I'll
+leave it like this for now, but if I have time a simple pooling system would easy the performance impact of this system
