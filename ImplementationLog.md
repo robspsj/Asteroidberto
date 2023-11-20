@@ -52,3 +52,8 @@ Implemented a bullet behaviour, bullet now has a simple state that is just a boo
 mechanics are separated each in their own behaviour so it is easy to experiment in the future with different
 bullet behaviors like powerups, also it is a bad practice to keep instantiating and destroying lots of objects, I'll
 leave it like this for now, but if I have time a simple pooling system would easy the performance impact of this system
+
+### 2023/11/19 23:00
+I'll finish now the last features to have the basic Asteroids features, a respawn system, the steroid child spawn
+behavior ui, asteroid waves etc, I'm focusing now in having the features implemented as as fast as possible, so I'll
+make a few tradeoffs to have the game minimally working even if I have to sacrifice quality here or there.

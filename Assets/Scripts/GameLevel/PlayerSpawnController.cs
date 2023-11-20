@@ -35,11 +35,11 @@ namespace GameLevel
         private void ShipStateOnOnShipGotHit()
         {
             DeregisterShip(_shipState);
-
+            _gameLevelState.PlayerLives -= 1;
+            
             if (_gameLevelState.PlayerLives <= 0) return;
             
             StartCoroutine(SpawnShip());
-            _gameLevelState.PlayerLives -= 1;
         }
 
         private IEnumerator SpawnShip()

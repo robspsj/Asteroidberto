@@ -1,12 +1,11 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace GameLevel
 {
     public delegate void PlayerLivesChange(int previousLives, int newLives);
     public class GameLevelState : MonoBehaviour
     {
-        public event PlayerLivesChange PlayerLivesChange;
+        public event PlayerLivesChange OnPlayerLivesChange;
         
         [SerializeField] private int _defaultPLayerLives = 3;
         private int _playerLives ;
@@ -19,14 +18,14 @@ namespace GameLevel
                 
                 var oldLives = _playerLives;
                 _playerLives = value;
-                PlayerLivesChange?.Invoke(oldLives, value);
+                OnPlayerLivesChange?.Invoke(oldLives, value);
             }
             get => _playerLives;
         }
 
         private void Awake()
         {
-            _playerLives = _defaultPLayerLives;
+            PlayerLives = _defaultPLayerLives;
         }
     }
 }
