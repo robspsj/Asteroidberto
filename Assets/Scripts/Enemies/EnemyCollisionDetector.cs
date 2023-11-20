@@ -7,7 +7,7 @@ namespace Asteroidsberto.Enemies
         [SerializeField] private EnemyState _enemyState;
         private void OnCollisionEnter2D(Collision2D other)
         {
-            if (other.collider.CompareTag("Bullet"))
+            if (other.collider.CompareTag("Bullet") || other.collider.CompareTag("Player"))
             {
                 _enemyState.SetDespawn();
             }

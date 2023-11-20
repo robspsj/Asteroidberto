@@ -14,6 +14,8 @@ namespace Asteroidsberto.Ship
 
     public delegate void OnShipGotHit();
 
+    public delegate void OnShipInvincibilityStateChange(bool previousState, bool newState);
+
     public class ShipState : MonoBehaviour
     {
         public enum BoosterState
@@ -32,6 +34,7 @@ namespace Asteroidsberto.Ship
 
         public event ShipBoosterStateChange OnShipBoosterStateChange;
         public event ShipTurningStateChange OnShipTurningStateChange;
+        public event OnShipInvincibilityStateChange OnShipInvincibilityStateChange;
         public event OnShipShoot OnShipShoot;
         public event OnShipGotHit OnShipGotHit;
 
@@ -41,6 +44,25 @@ namespace Asteroidsberto.Ship
         }
 
         private BoosterState _currentBoosterState = BoosterState.Off;
+        private TurningState _currentTurningState = TurningState.NotTurning;
+
+        private bool _invincible = true;
+
+        public bool Invincible
+        {
+            set
+            {
+                if (_invincible == value)
+                {
+                    return;
+                }
+
+                bool oldValue = _invincible;
+                _invincible = value;
+                OnShipInvincibilityStateChange?.Invoke(oldValue, value);
+            }
+            get => _invincible;
+        }
 
         public BoosterState CurrentBoosterState
         {
@@ -55,7 +77,6 @@ namespace Asteroidsberto.Ship
             get => _currentBoosterState;
         }
 
-        private TurningState _currentTurningState = TurningState.NotTurning;
 
         public TurningState CurrentTurningState
         {

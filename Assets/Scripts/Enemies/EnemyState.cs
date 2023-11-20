@@ -10,7 +10,8 @@ namespace Asteroidsberto.Enemies
     {
         public event OnDespawn OnDespawn;
         public event OnSpawn OnSpawn;
-        public bool _spawned = false;
+        private bool _spawned = false;
+        public bool Spawned => _spawned;
 
         private void OnEnable()
         {

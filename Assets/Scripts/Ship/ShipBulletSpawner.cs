@@ -16,6 +16,11 @@ namespace Asteroidsberto.Ship
 
         private void OnEnable()
         {
+            if (_worldTransform == null)
+            {
+                _worldTransform = transform.parent;
+            }
+            
             _shipState.OnShipShoot += OnBulletTrigger;
         }
 

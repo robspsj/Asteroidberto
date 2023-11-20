@@ -255,11 +255,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 18c61e9841a11244596b1360f4271814, type: 3}
---- !u!4 &487286087 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8538228809073642259, guid: e4848b5b55900a8419c463e93fdfe0cb, type: 3}
-  m_PrefabInstance: {fileID: 7725321524087949491}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -626,6 +621,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1682721940}
   - component: {fileID: 1682721939}
+  - component: {fileID: 1682721942}
+  - component: {fileID: 1682721941}
   m_Layer: 0
   m_Name: World
   m_TagString: Untagged
@@ -670,6 +667,35 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1682721941
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1682721938}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7500335d817946609936d157d8298f51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _gameLevelState: {fileID: 1682721942}
+  _shipState: {fileID: 1888677097}
+  _shipPrefab: {fileID: 3864832275609146210, guid: e4848b5b55900a8419c463e93fdfe0cb, type: 3}
+  _worldTransform: {fileID: 1682721940}
+--- !u!114 &1682721942
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1682721938}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0eef04f959fd43d0954fd075f9eaa3f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _defaultPLayerLives: 3
 --- !u!4 &1744272861 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1165327172549403251, guid: 18c61e9841a11244596b1360f4271814, type: 3}
@@ -741,6 +767,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 667296704810243168, guid: e4848b5b55900a8419c463e93fdfe0cb, type: 3}
   m_PrefabInstance: {fileID: 7725321524087949491}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1888677097 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5364154432195023509, guid: e4848b5b55900a8419c463e93fdfe0cb, type: 3}
+  m_PrefabInstance: {fileID: 7725321524087949491}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4aad8a3a2b1f0e42ad770f386786fe6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &2016694492 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1165327172549403251, guid: 18c61e9841a11244596b1360f4271814, type: 3}
@@ -868,10 +905,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7333354292105425742, guid: 18c61e9841a11244596b1360f4271814, type: 3}
-      propertyPath: m_IsTrigger
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -932,22 +965,6 @@ PrefabInstance:
     - target: {fileID: 3864832275609146210, guid: e4848b5b55900a8419c463e93fdfe0cb, type: 3}
       propertyPath: m_Name
       value: ShipBody
-      objectReference: {fileID: 0}
-    - target: {fileID: 4485638559912761695, guid: e4848b5b55900a8419c463e93fdfe0cb, type: 3}
-      propertyPath: _bulletOrigin
-      value: 
-      objectReference: {fileID: 487286087}
-    - target: {fileID: 4485638559912761695, guid: e4848b5b55900a8419c463e93fdfe0cb, type: 3}
-      propertyPath: _bulletPrefab
-      value: 
-      objectReference: {fileID: 6346996783462295152, guid: 64fd0ee911ae4614fbfccb7780fcbdb0, type: 3}
-    - target: {fileID: 4485638559912761695, guid: e4848b5b55900a8419c463e93fdfe0cb, type: 3}
-      propertyPath: _worldTransform
-      value: 
-      objectReference: {fileID: 1682721940}
-    - target: {fileID: 6176846394253657460, guid: e4848b5b55900a8419c463e93fdfe0cb, type: 3}
-      propertyPath: m_BodyType
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
