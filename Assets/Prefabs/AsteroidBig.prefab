@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: 3936487000496266595}
   - component: {fileID: 6975699673008110599}
   - component: {fileID: 6025049000602653743}
+  - component: {fileID: -6151708799089044137}
   m_Layer: 6
   m_Name: AsteroidBig
   m_TagString: Enemy
@@ -104,7 +105,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c057f80ecaa4e8cb4038d095a7fda56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _spawned: 0
 --- !u!114 &673664086168000322
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -255,3 +255,15 @@ MonoBehaviour:
   - {fileID: 129161401623986060, guid: f9c6ebab40201c044ab1743ac65c900b, type: 3}
   - {fileID: 129161401623986060, guid: f9c6ebab40201c044ab1743ac65c900b, type: 3}
   _transform: {fileID: 1165327172549403251}
+--- !u!114 &-6151708799089044137
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 294436792371198517}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e48b10a87a154fe49521ce0213dd02bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

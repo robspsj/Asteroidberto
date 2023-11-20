@@ -1527,6 +1527,8 @@ GameObject:
   - component: {fileID: 1682721939}
   - component: {fileID: 1682721942}
   - component: {fileID: 1682721941}
+  - component: {fileID: 1682721944}
+  - component: {fileID: 1682721943}
   m_Layer: 0
   m_Name: World
   m_TagString: Untagged
@@ -1600,6 +1602,35 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _defaultPLayerLives: 3
+--- !u!114 &1682721943
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1682721938}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ace7041caaf4aefa85b30421331f620, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _enemyPrefab: {fileID: 294436792371198517, guid: 18c61e9841a11244596b1360f4271814, type: 3}
+  _world: {fileID: 1682721940}
+  _camera: {fileID: 519420031}
+  _gameLevelState: {fileID: 1682721942}
+--- !u!114 &1682721944
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1682721938}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e296f9c923745559b94d059283b5084, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _gameLevelState: {fileID: 1682721942}
 --- !u!4 &1744272861 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1165327172549403251, guid: 18c61e9841a11244596b1360f4271814, type: 3}
