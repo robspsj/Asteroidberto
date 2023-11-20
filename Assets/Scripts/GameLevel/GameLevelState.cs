@@ -12,6 +12,7 @@ namespace GameLevel
         [SerializeField] private int _defaultPLayerLives = 3;
         private int _playerLives ;
         private int _enemyCount ;
+        public int CompletedWaves { get; set; }
         
         public int PlayerLives
         {
@@ -36,7 +37,7 @@ namespace GameLevel
             }
             get => _enemyCount;
         }
-
+        
         private void Awake()
         {
             PlayerLives = _defaultPLayerLives;

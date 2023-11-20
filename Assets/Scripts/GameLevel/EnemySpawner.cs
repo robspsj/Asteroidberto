@@ -31,7 +31,9 @@ namespace GameLevel
         private void SpawnNextWave()
         {
             Bounds bounds = _camera.GetCameraBoundingBox();
-            for (var i = 0; i < 5; i++)
+            _gameLevelState.CompletedWaves += 1;
+            var wavesCount = 5 + _gameLevelState.CompletedWaves;
+            for (var i = 0; i < wavesCount; i++)
             {
                 float random = Random.value * (bounds.size.x + bounds.size.y);
 
