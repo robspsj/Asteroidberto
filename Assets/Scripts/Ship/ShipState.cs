@@ -5,7 +5,7 @@ namespace Asteroidsberto.Ship
     public delegate void ShipBoosterStateChange(
         ShipState.BoosterState previousState,
         ShipState.BoosterState newState);
-    
+
     public delegate void ShipTurningStateChange(
         ShipState.TurningState previousState,
         ShipState.TurningState newState);
@@ -21,7 +21,7 @@ namespace Asteroidsberto.Ship
             Off,
             On
         }
-        
+
         public enum TurningState
         {
             NotTurning,
@@ -29,7 +29,6 @@ namespace Asteroidsberto.Ship
             Right
         }
 
-        
 
         public event ShipBoosterStateChange OnShipBoosterStateChange;
         public event ShipTurningStateChange OnShipTurningStateChange;
@@ -40,28 +39,30 @@ namespace Asteroidsberto.Ship
         {
             OnShipShoot?.Invoke();
         }
-        
+
         private BoosterState _currentBoosterState = BoosterState.Off;
+
         public BoosterState CurrentBoosterState
         {
             set
             {
                 if (_currentBoosterState == value) return;
-                
+
                 var previousState = _currentBoosterState;
                 _currentBoosterState = value;
                 OnShipBoosterStateChange?.Invoke(previousState, value);
             }
             get => _currentBoosterState;
         }
-        
+
         private TurningState _currentTurningState = TurningState.NotTurning;
+
         public TurningState CurrentTurningState
         {
             set
             {
                 if (_currentTurningState == value) return;
-                
+
                 var previousState = _currentTurningState;
                 _currentTurningState = value;
                 OnShipTurningStateChange?.Invoke(previousState, value);

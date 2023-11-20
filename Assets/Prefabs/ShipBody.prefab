@@ -211,7 +211,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3aa9e4a034ed42b3afd8be4d05dcf30e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _state: {fileID: 5364154432195023509}
+  _shipState: {fileID: 5364154432195023509}
   _accelerateButton: 32
   _turnLeftButton: 97
   _turnRightButton: 100
@@ -247,7 +247,7 @@ MonoBehaviour:
   _bulletInterval: 0.2
   _worldTransform: {fileID: 0}
   _bulletOrigin: {fileID: 0}
-  _bulletPrefab: {fileID: 0}
+  _bulletPrefab: {fileID: 6346996783462295152, guid: 64fd0ee911ae4614fbfccb7780fcbdb0, type: 3}
 --- !u!114 &995887187564484734
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -285,7 +285,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf04990679cc40fb800d9dc9b96e51b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _enemyState: {fileID: 5364154432195023509}
+  _shipState: {fileID: 5364154432195023509}
 --- !u!1 &4302279109877972210
 GameObject:
   m_ObjectHideFlags: 0

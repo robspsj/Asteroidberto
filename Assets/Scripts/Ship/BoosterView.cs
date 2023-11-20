@@ -6,7 +6,7 @@ namespace Asteroidsberto.Ship
     public class ShipBoosterView : MonoBehaviour
     {
         [SerializeField] private SpriteRenderer _boosterSpriteRenderer;
-        [FormerlySerializedAs("_shipStateController")] [SerializeField] private ShipState _shipState;
+        [SerializeField] private ShipState _shipState;
 
         private void OnEnable()
         {

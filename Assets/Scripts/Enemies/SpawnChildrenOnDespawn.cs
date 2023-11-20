@@ -1,25 +1,31 @@
-﻿using UnityEngine;
+﻿using Unity.VisualScripting;
+using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace Asteroidsberto.Enemies
 {
     public class SpawnChildrenOnDespawn : MonoBehaviour
     {
-        [SerializeField] private EnemyState _bulletState;
+        [SerializeField] private EnemyState _enemyState;
         [SerializeField] private GameObject[] _spawnGroup;
+        [SerializeField] private Transform _transform;
 
         private void OnEnable()
         {
-            _bulletState.OnDespawn += BulletStateOnOnDespawn;
+            _enemyState.OnDespawn += EnemyStateOnOnDespawn;
         }
 
         private void OnDisable()
         {
-            _bulletState.OnDespawn -= BulletStateOnOnDespawn;
+            _enemyState.OnDespawn -= EnemyStateOnOnDespawn;
         }
 
-        private void BulletStateOnOnDespawn()
+        private void EnemyStateOnOnDespawn()
         {
-            Destroy(gameObject);
+            foreach (GameObject spawnedObject in _spawnGroup)
+            {
+                Instantiate(spawnedObject, _transform.position, Quaternion.identity, _transform.parent);
+            }
         }
     }
 }

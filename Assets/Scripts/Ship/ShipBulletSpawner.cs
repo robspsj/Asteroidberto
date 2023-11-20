@@ -1,12 +1,11 @@
 ﻿using System.Collections;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 namespace Asteroidsberto.Ship
 {
     public class ShipBulletSpawner : MonoBehaviour
     {
-        [FormerlySerializedAs("_shipStateController")] [SerializeField] private ShipState _shipState;
+        [SerializeField] private ShipState _shipState;
         [SerializeField] private float _bulletInterval = 0.2f;
         [SerializeField] private Transform _worldTransform;
         [SerializeField] private Transform _bulletOrigin;
@@ -55,7 +54,7 @@ namespace Asteroidsberto.Ship
         private void ShootBullet()
         {
             _lastBulletTime = Time.time;
-            Instantiate(_bulletPrefab,_bulletOrigin.position, _bulletOrigin.rotation, _worldTransform);
+            Instantiate(_bulletPrefab, _bulletOrigin.position, _bulletOrigin.rotation, _worldTransform);
         }
     }
 }

@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 5942663470238151036}
   - component: {fileID: 3936487000496266595}
   - component: {fileID: 6975699673008110599}
+  - component: {fileID: 6025049000602653743}
   m_Layer: 6
   m_Name: AsteroidBig
   m_TagString: Enemy
@@ -222,7 +223,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54c9cfde46e843e7bd22459174e8d8e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _bulletState: {fileID: 5749385925302123262}
+  _enemyState: {fileID: 5749385925302123262}
 --- !u!114 &6975699673008110599
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -236,3 +237,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _enemyState: {fileID: 5749385925302123262}
+--- !u!114 &6025049000602653743
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 294436792371198517}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94e752fbfcba4da480248ef403bd93e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _enemyState: {fileID: 5749385925302123262}
+  _spawnGroup:
+  - {fileID: 129161401623986060, guid: f9c6ebab40201c044ab1743ac65c900b, type: 3}
+  - {fileID: 129161401623986060, guid: f9c6ebab40201c044ab1743ac65c900b, type: 3}
+  - {fileID: 129161401623986060, guid: f9c6ebab40201c044ab1743ac65c900b, type: 3}
+  _transform: {fileID: 1165327172549403251}

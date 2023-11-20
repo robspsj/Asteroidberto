@@ -5,7 +5,7 @@ namespace Asteroidsberto.Ship
 {
     public class ShipInput : MonoBehaviour
     {
-        [FormerlySerializedAs("_stateController")] [SerializeField] private ShipState _state;
+        [SerializeField] private ShipState _shipState;
 
         [SerializeField] private KeyCode _accelerateButton = KeyCode.Space;
         [SerializeField] private KeyCode _turnLeftButton = KeyCode.A;
@@ -14,7 +14,7 @@ namespace Asteroidsberto.Ship
 
         private void Update()
         {
-            _state.CurrentBoosterState = Input.GetKey(_accelerateButton)
+            _shipState.CurrentBoosterState = Input.GetKey(_accelerateButton)
                 ? ShipState.BoosterState.On
                 : ShipState.BoosterState.Off;
 
@@ -22,15 +22,15 @@ namespace Asteroidsberto.Ship
             var rightInput = Input.GetKey(_turnRightButton);
 
             if (leftInput && !rightInput)
-                _state.CurrentTurningState = ShipState.TurningState.Left;
+                _shipState.CurrentTurningState = ShipState.TurningState.Left;
             else if (!leftInput && rightInput)
-                _state.CurrentTurningState = ShipState.TurningState.Right;
+                _shipState.CurrentTurningState = ShipState.TurningState.Right;
             else
-                _state.CurrentTurningState = ShipState.TurningState.NotTurning;
+                _shipState.CurrentTurningState = ShipState.TurningState.NotTurning;
 
             if (Input.GetKeyDown(_shootButton))
             {
-                _state.ShootTrigger();
+                _shipState.ShootTrigger();
             }
         }
     }

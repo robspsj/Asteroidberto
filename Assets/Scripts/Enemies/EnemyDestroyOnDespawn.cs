@@ -1,23 +1,24 @@
 ﻿using UnityEngine;
+using UnityEngine.Serialization;
 
 
 namespace Asteroidsberto.Enemies
 {
     public class EnemyDestroyOnDespawn : MonoBehaviour
     {
-        [SerializeField] private EnemyState _bulletState;
+        [SerializeField] private EnemyState _enemyState;
 
         private void OnEnable()
         {
-            _bulletState.OnDespawn += BulletStateOnOnDespawn;
+            _enemyState.OnDespawn += EnemyStateOnOnDespawn;
         }
 
         private void OnDisable()
         {
-            _bulletState.OnDespawn -= BulletStateOnOnDespawn;
+            _enemyState.OnDespawn -= EnemyStateOnOnDespawn;
         }
 
-        private void BulletStateOnOnDespawn()
+        private void EnemyStateOnOnDespawn()
         {
             Destroy(gameObject);
         }
