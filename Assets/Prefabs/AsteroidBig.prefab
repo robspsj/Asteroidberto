@@ -19,6 +19,7 @@ GameObject:
   - component: {fileID: 6975699673008110599}
   - component: {fileID: 6025049000602653743}
   - component: {fileID: -6151708799089044137}
+  - component: {fileID: 4335149416651876297}
   m_Layer: 6
   m_Name: AsteroidBig
   m_TagString: Enemy
@@ -33,13 +34,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 294436792371198517}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.44309, y: 0.39117, z: 0}
   m_LocalScale: {x: 0.11381, y: 0.11381, z: 0.1138}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &4866721442585343711
 SpriteRenderer:
@@ -224,6 +225,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _enemyState: {fileID: 5749385925302123262}
+  _poolElement: {fileID: 4335149416651876297}
 --- !u!114 &6975699673008110599
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -265,5 +267,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e48b10a87a154fe49521ce0213dd02bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &4335149416651876297
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 294436792371198517}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf2b3fe6188d4fdf9f8c53459c41f9b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

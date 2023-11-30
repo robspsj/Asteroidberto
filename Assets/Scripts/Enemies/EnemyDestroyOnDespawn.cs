@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using SimpleUnityObjectPool;
+using UnityEngine;
 using UnityEngine.Serialization;
 
 
@@ -7,6 +8,7 @@ namespace Asteroidsberto.Enemies
     public class EnemyDestroyOnDespawn : MonoBehaviour
     {
         [SerializeField] private EnemyState _enemyState;
+        [SerializeField] private PoolElement _poolElement;
 
         private void OnEnable()
         {
@@ -20,7 +22,7 @@ namespace Asteroidsberto.Enemies
 
         private void EnemyStateOnOnDespawn()
         {
-            Destroy(gameObject);
+            _poolElement.ReturnToPool();
         }
     }
 }
